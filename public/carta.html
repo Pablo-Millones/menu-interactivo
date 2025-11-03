@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Menú - Gourmet Restaurant</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Montserrat:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+      .font-serif-display { font-family: 'Playfair Display', serif; }
+      .font-sans-body { font-family: 'Montserrat', sans-serif; }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#D4AF37",
+              "background-light": "#F8F8F8",
+              "background-dark": "#1A1A1A",
+              "text-light": "#333333",
+              "text-dark": "#E0E0E0",
+              "surface-light": "#FFFFFF",
+              "surface-dark": "#2C2C2C",
+              "border-light": "#EAEAEA",
+              "border-dark": "#444444",
+            },
+            fontFamily: {
+              "display": ['Playfair Display', 'serif'],
+              "body": ['Montserrat', 'sans-serif'],
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-body">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center px-6 py-4 bg-surface-light dark:bg-surface-dark shadow">
+    <a href="index.html" class="font-semibold hover:text-primary transition"><h1 class="text-2xl font-display font-bold text-primary">Gourmet Restaurant</h1></a>
+  </header>
+
+  <main class="max-w-7xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+    <!-- Sección productos -->
+    <section class="lg:col-span-2">
+
+      <!-- Tabs de categoría -->
+<div class="sticky top-[73px] z-10 bg-background-light dark:bg-background-dark pt-4">
+  <div class="flex border-b border-border-light dark:border-border-dark px-4 gap-6 overflow-x-auto">
+    <a href="#" data-categoria="todos" class="categoria-tab active-tab border-b-[3px] border-b-primary pb-[13px] pt-4 whitespace-nowrap font-bold text-primary">Todos</a>
+    <a href="#" data-categoria="entradas" class="categoria-tab border-b-[3px] border-b-transparent text-gray-500 dark:text-gray-400 pb-[13px] pt-4 whitespace-nowrap font-bold">Entradas</a>
+    <a href="#" data-categoria="platos" class="categoria-tab border-b-[3px] border-b-transparent text-gray-500 dark:text-gray-400 pb-[13px] pt-4 whitespace-nowrap font-bold">Platos</a>
+    <a href="#" data-categoria="postres" class="categoria-tab border-b-[3px] border-b-transparent text-gray-500 dark:text-gray-400 pb-[13px] pt-4 whitespace-nowrap font-bold">Postres</a>
+    <a href="#" data-categoria="bebidas" class="categoria-tab border-b-[3px] border-b-transparent text-gray-500 dark:text-gray-400 pb-[13px] pt-4 whitespace-nowrap font-bold">Bebidas</a>
+  </div>
+</div>
+
+    <!-- Productos -->
+<div id="productos" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 p-4 mt-6">
+
+  <!-- Entradas -->
+  <div class="producto bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition" data-categoria="entradas todos">
+    <img src="https://www.buenprovecho.hn/wp-content/uploads/2022/12/Untitled-design-19.jpg" alt="Crostini de Trufa" class="aspect-video object-cover w-full" />
+    <div class="p-4 flex flex-col">
+      <p class="font-display text-lg font-bold">Crostini de Trufa y Champiñones</p>
+      <p class="text-gray-500 text-sm mt-1">Pan artesano tostado con mezcla de champiñones y trufa negra.</p>
+      <p class="text-lg font-semibold text-primary mt-2">$15000</p>
+      <button class="agregar bg-primary/20 text-primary font-bold py-2 rounded-lg mt-3 hover:bg-primary hover:text-white transition">Añadir al pedido</button>
+    </div>
+  </div>
+
+  <!-- Platos -->
+  <div class="producto bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition" data-categoria="platos todos">
+    <img src="https://lacocinadefrabisa.lavozdegalicia.es/wp-content/uploads/2024/08/ENSALADA-DE-BURRATA-CON-HIGOS-MANGO-Y-JAMON.jpg" alt="Burrata con Prosciutto" class="aspect-video object-cover w-full" />
+    <div class="p-4 flex flex-col">
+      <p class="font-display text-lg font-bold">Burrata con Prosciutto e Higo</p>
+      <p class="text-gray-500 text-sm mt-1">Burrata cremosa con prosciutto e higos frescos.</p>
+      <p class="text-lg font-semibold text-primary mt-2">$17000</p>
+      <button class="agregar bg-primary/20 text-primary font-bold py-2 rounded-lg mt-3 hover:bg-primary hover:text-white transition">Añadir al pedido</button>
+    </div>
+  </div>
+
+  <div class="producto bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition" data-categoria="platos todos">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVu8siZRm_n0XacnKfhF8iE7fWJRaBMtvu3fcrv5thAJiW0glQ_hUy16jOp6wsUq1J3c_YIMUrMoUR4AX7uZEVXHU2PSUSMhYNV5dtnAxESgtWLN31SCIoTTmmueOjzEABQbCRAzVWOG4eMyBhj7aQisXxpWCFxP-E01Z7nPrSkuJ7-3IWVFUFwGnldeVZHPHraSDUJy82vN3oaAOJHPb3WKgdU-hkCiPWCGtOyDt_YXJZTzIF8WzlQRY7zT7fqFfMEqqTbSIHmP4" alt="Vieras Selladas" class="aspect-video object-cover w-full" />
+    <div class="p-4 flex flex-col">
+      <p class="font-display text-lg font-bold">Vieras Selladas con Risotto de Azafrán</p>
+      <p class="text-gray-500 text-sm mt-1">Delicadas vieras selladas sobre un risotto cremoso.</p>
+      <p class="text-lg font-semibold text-primary mt-2">$18500</p>
+      <button class="agregar bg-primary/20 text-primary font-bold py-2 rounded-lg mt-3 hover:bg-primary hover:text-white transition">Añadir al pedido</button>
+    </div>
+  </div>
+
+  <!-- Postres -->
+  <div class="producto bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition" data-categoria="postres todos">
+    <img src="https://www.paulinacocina.net/wp-content/uploads/2020/01/receta-de-tiramisu-facil-y-economico-1740483918.jpg.webp" alt="Tiramisú Clásico" class="aspect-video object-cover w-full" />
+    <div class="p-4 flex flex-col">
+      <p class="font-display text-lg font-bold">Tiramisú Clásico Italiano</p>
+      <p class="text-gray-500 text-sm mt-1">Suaves capas de mascarpone y café espresso con cacao.</p>
+      <p class="text-lg font-semibold text-primary mt-2">$9500</p>
+      <button class="agregar bg-primary/20 text-primary font-bold py-2 rounded-lg mt-3 hover:bg-primary hover:text-white transition">Añadir al pedido</button>
+    </div>
+  </div>
+
+  <div class="producto bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition" data-categoria="postres todos">
+    <img src="https://imagenes.elpais.com/resizer/v2/CMVGYLDAUBIXLOR5ZG3V75U3CA.jpg?auth=7e2cd93314709cadd357e0ccc834b319f04e89657dd7c6f4cd254be76a3dcc3e&width=1200" alt="Coulant de Chocolate" class="aspect-video object-cover w-full" />
+    <div class="p-4 flex flex-col">
+      <p class="font-display text-lg font-bold">Coulant de Chocolate Amargo</p>
+      <p class="text-gray-500 text-sm mt-1">Bizcocho caliente con corazón fundido de chocolate belga.</p>
+      <p class="text-lg font-semibold text-primary mt-2">$10500</p>
+      <button class="agregar bg-primary/20 text-primary font-bold py-2 rounded-lg mt-3 hover:bg-primary hover:text-white transition">Añadir al pedido</button>
+    </div>
+  </div>
+
+  <!-- Bebidas -->
+  <div class="producto bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition" data-categoria="bebidas todos">
+    <img src="https://lavinoteca.vtexassets.com/arquivos/ids/155758-1200-1500?v=636808262204370000&width=1200&height=1500&aspect=true" alt="Vino Tinto Reserva" class="aspect-video object-cover w-full" />
+    <div class="p-4 flex flex-col">
+      <p class="font-display text-lg font-bold">Vino Tinto Reserva Cabernet Sauvignon</p>
+      <p class="text-gray-500 text-sm mt-1">Aromas intensos a frutos rojos y madera fina.</p>
+      <p class="text-lg font-semibold text-primary mt-2">$14500</p>
+      <button class="agregar bg-primary/20 text-primary font-bold py-2 rounded-lg mt-3 hover:bg-primary hover:text-white transition">Añadir al pedido</button>
+    </div>
+  </div>
+
+</div>
+
+    </section>
+
+    <!-- Carrito -->
+    <aside class="bg-surface-light dark:bg-surface-dark shadow-lg rounded-xl p-6 sticky top-8 h-fit">
+      <h2 class="font-display text-2xl font-bold border-b border-border-light dark:border-border-dark pb-3 mb-4">Tu Pedido</h2>
+      <div id="carrito" class="space-y-3"></div>
+      <div class="flex justify-between items-center font-bold border-t border-border-light dark:border-border-dark pt-3 mt-3">
+        <p>Subtotal</p>
+        <p id="subtotal">$0</p>
+      </div>
+      <button id="finalizar-pedido" class="w-full mt-6 bg-primary text-white font-bold py-3 rounded-lg hover:bg-primary/80 transition">
+        Finalizar Pedido
+      </button>
+    </aside>
+  </main>
+      <!-- Modal de confirmación -->
+<div id="modalPedido" class="fixed inset-0 bg-black/50 flex items-center justify-center hidden z-50">
+  <div class="bg-surface-light dark:bg-surface-dark rounded-xl p-6 max-w-md w-full relative">
+    <h3 class="font-display text-xl font-bold mb-4">Confirma tu pedido</h3>
+    <label class="block mb-2 font-semibold">Nombre</label>
+    <input id="nombreCliente" type="text" class="w-full p-2 border border-border-light rounded mb-4" placeholder="Tu nombre">
+    <label class="block mb-2 font-semibold">Dirección</label>
+    <input id="direccionCliente" type="text" class="w-full p-2 border border-border-light rounded mb-4" placeholder="Dirección de envío">
+    <div class="flex justify-end gap-4 mt-4">
+      <button id="cancelarPedido" class="py-2 px-4 bg-gray-300 dark:bg-gray-600 rounded hover:bg-gray-400 transition">Cancelar</button>
+      <button id="confirmarPedido" class="py-2 px-4 bg-primary text-white rounded hover:bg-primary/80 transition">Confirmar</button>
+    </div>
+  </div>
+</div>
+
+  <script type="module" src="/js/carta.js"></script>
+</body>
+
+</html>

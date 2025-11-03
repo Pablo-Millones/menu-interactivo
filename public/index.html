@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Gourmet Restaurant - Una Experiencia Culinaria Inolvidable</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700;900&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#eca413",
+            "background-light": "#f8f7f6",
+            "background-dark": "#121212", "text-light": "#1b170d",
+            "text-dark": "#f8f7f6",
+            "subtle-light": "#9a804c",
+            "subtle-dark": "#b0a082", "border-light": "#f3efe7",
+            "border-dark": "#2c2c2c",
+          },
+          fontFamily: {
+            "display": ["Noto Serif", "serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    .group:hover .group-hover\:scale-110 {
+      transform: scale(1.1);
+    }
+
+    .group .group-hover\:opacity-100 {
+      opacity: 0;
+    }
+
+    .group:hover .group-hover\:opacity-100 {
+      opacity: 1;
+    }
+
+    .menu-scroll-container::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    .menu-scroll-container::-webkit-scrollbar-track {
+      background: #2c2c2c;
+      border-radius: 10px;
+    }
+
+    .menu-scroll-container::-webkit-scrollbar-thumb {
+      background: #9a804c;
+      border-radius: 10px;
+    }
+
+    .menu-scroll-container::-webkit-scrollbar-thumb:hover {
+      background: #eca413;
+    }
+  </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+  <div class="relative w-full">
+<header class="sticky top-0 z-50 flex items-center justify-between border-b border-border-light dark:border-border-dark bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm px-4 sm:px-10 py-3">
+  <div class="flex items-center gap-4 overflow-hidden">
+    <div class="size-6 text-text-light dark:text-text-dark">
+      <!-- Logo SVG -->
+    </div>
+    <h2 id="header-title" class="text-lg font-bold leading-tight tracking-[-0.015em] transition-all duration-500 transform">
+      Gourmet Restaurant
+    </h2>
+  </div>
+
+<!-- 🖥️ Menú de escritorio -->
+<nav class="hidden md:flex items-center gap-8 text-gray-800 dark:text-gray-100">
+  <a href="#inicio" class="hover:text-primary transition">Inicio</a>
+  <a href="carta.html" class="hover:text-primary transition">Carta</a>
+  <a href="#reservas" class="hover:text-primary transition">Reservas</a>
+  <a href="#galeria" class="hover:text-primary transition">Galería</a>
+  <a href="#contacto" class="hover:text-primary transition">Contacto</a>
+</nav>
+
+<!-- 📱 Menú móvil (overlay animado) -->
+<nav id="nav-menu"
+     class="fixed inset-0 hidden flex flex-col items-center justify-center gap-6
+            w-screen h-screen z-50 transform translate-x-full transition-transform duration-500 md:hidden"
+     style="background-color: rgba(18, 18, 18, 0.95); backdrop-filter: blur(10px); color: #bcbcbc;">
+  <a href="#inicio" class="nav-link opacity-80 text-xl text-white hover:opacity-100 transition">Inicio</a>
+  <a href="carta.html" class="nav-link opacity-80 text-xl text-white hover:opacity-100 transition">Carta</a>
+  <a href="#reservas" class="nav-link opacity-80 text-xl text-white hover:opacity-100 transition">Reservas</a>
+  <a href="#galeria" class="nav-link opacity-80 text-xl text-white hover:opacity-100 transition">Galería</a>
+  <a href="#contacto" class="nav-link opacity-80 text-xl text-white hover:opacity-100 transition">Contacto</a>
+</nav>
+
+
+
+
+      <div class="flex items-center gap-4">
+        <a href="#reservas"
+          class="hidden md:flex min-w-[84px] ... bg-primary text-text-light justify-center items-center h-10 px-4 rounded-lg font-bold hover:opacity-90 transition-opacity">
+          Reservar Mesa
+        </a>
+  <button id="btn-menu" class="md:hidden p-2 rounded-lg hover:bg-primary/20 transition-colors z-50">
+    <span id="icon-menu" class="material-symbols-outlined">menu</span>
+  </button>
+      </div>
+    </header>
+    <main class="flex flex-col">
+      <section id="inicio" class="relative" >
+        <div
+          class="flex min-h-[calc(100vh-68px)] flex-col gap-6 bg-cover bg-center bg-no-repeat items-center justify-center p-4 text-center"
+          data-alt="A beautifully plated signature dish from the restaurant, viewed from above, with soft, artistic lighting."
+          style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuA-VfzK5Wd9xlqdp9g-Bm11axrMBSAS2PadnZdEpxfsH4885VQ60JP810unqZOLDd_rU1BtBoQWxKjwQMnwcoQEdwgn0-tjkOoNixOqqtdaGDo0Hrbk4KBS4USFCER2vTiPTx-QYAnZIYnDEkDv13b6xIu-pggxOINQ4zgDNYU3XZi_yrt8LLFQJIKc_IvLhMipAkePpu3mnLUOALqtvA0EYfCpKHKSCWZDCxuZrR5mpgxSMqNgVqLFuqTPaH1jJ4FoYGfz5unCsC4");'>
+          <div class="flex flex-col gap-4">
+            <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-6xl">
+              Una Experiencia Culinaria Inolvidable
+            </h1>
+            <h2 class="text-white text-base font-normal leading-normal md:text-lg max-w-2xl mx-auto">
+              Descubra un viaje de sabores únicos en un ambiente elegante y sofisticado.
+            </h2>
+          </div>
+          <a class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-text-light text-base font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity"
+            href="#reservas">
+            <span class="truncate">Reservar Mesa</span>
+          </a>
+        </div>
+      </section>
+      <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24" id="filosofia">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div class="flex flex-col gap-4">
+            <h2 class="text-3xl font-bold leading-tight tracking-[-0.033em] md:text-4xl">
+              Nuestra Filosofía
+            </h2>
+            <p class="text-base font-normal leading-relaxed text-subtle-light dark:text-subtle-dark">
+              Creemos en la cocina como una forma de arte. Nuestro compromiso es fusionar ingredientes de la más alta
+              calidad, obtenidos de productores locales, con técnicas culinarias innovadoras. Cada plato está diseñado
+              para deleitar los sentidos y contar una historia, creando una experiencia memorable en un ambiente
+              exclusivo y acogedor.
+            </p>
+          </div>
+          <div class="w-full aspect-square bg-cover bg-center rounded-lg shadow-lg"
+            data-alt="Elegant interior of the restaurant, showing well-set tables, warm lighting, and a sophisticated decor."
+            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDwCDT6agPe95UD8BBzqHhCgIubDzurMUCnCdzyfjl5hRjJN2K1nHdjEkXdCHnW6TD1CordyP-71OwfNoGMfiYW2QE0tik8JYvEJ6db7D9mgsbQeXe_g_cwTieTLeRfVKmGMzErtrFFYrVxwXiJxZkdUXAdqPORg-4mnhyhLg0CIk5OKi1TjODFaFeaFth__4jSGjHLGN3Xbe7vjhLfRzqNtNbqnZa8c_nr6DpSUVmUuIKnNSDPiSYD0VxLSFkZs-Vmso5MA-QnHIM");'>
+          </div>
+        </div>
+      </section>
+           <section class="bg-background-light dark:bg-background-dark py-16 sm:py-24" id="galeria">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold leading-tight tracking-[-0.033em] md:text-4xl">Galería de Platos</h2>
+            <p class="mt-4 text-base leading-relaxed text-subtle-light dark:text-subtle-dark">Una muestra de nuestra
+              pasión por la gastronomía.</p>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="group relative overflow-hidden rounded-lg shadow-lg">
+              <div
+                class="bg-cover bg-center aspect-square transition-transform duration-500 ease-in-out group-hover:scale-110"
+                data-alt="A close-up shot of a perfectly cooked Solomillo a las Finas Hierbas."
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCXdS5bCYjixIx82sBMCrRYp5sbK1a5xO_oEScIwW9kBe3zp29XOL2ehVs0U0yLKSgK_FdojJPTv4AwcvhAieMLc_j4mM7aRaSvfwVbJeDbZOTBCrcug_CNGBFxivryghNLVSyBfox4ilIUrhFEdoJgRdaUFx44XPeNUA1QZr4uwdyAZRoKfF6eDLTuONMtsPK8KZ1FkcPHMLoT7zPbDSNmfPbVPY9ZyRYt8XA05QIWm_gLQ5iaYfyKjUN3Y8Alnbv6bNzyJvjeYig");'>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <p class="absolute bottom-4 left-4 text-white text-base font-bold leading-tight w-4/5 line-clamp-2">
+                Solomillo a las Finas Hierbas</p>
+            </div>
+            <div class="group relative overflow-hidden rounded-lg shadow-lg">
+              <div
+                class="bg-cover bg-center aspect-square transition-transform duration-500 ease-in-out group-hover:scale-110"
+                data-alt="A creamy Risotto de Hongos Silvestres in a white bowl."
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDKFiE2tDVqB1zdh3d22fwkN1TaQE59lDBzzXoDaTz66Y0fzbYGPGQDW6_EKWSt547wWOzBgTpQb3RjnTTXVVMzOuK4-sdyjhyF4FzPADQLCG-rdV7BABwBVyk0UnsZG-bAbwSBuOdojn769wDMugNMfQ_8eoSm40JsbkCdRVhVF3nn8wgnUDDA4A5y4mo8E8tVLlLzqsZLofx-QuDKup4F-Rz1germoDj80ZsOtRv3femjFusNcpa4lwwNe1iy4FuajO4nDzbduac");'>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <p class="absolute bottom-4 left-4 text-white text-base font-bold leading-tight w-4/5 line-clamp-2">
+                Risotto de Hongos Silvestres</p>
+            </div>
+            <div class="group relative overflow-hidden rounded-lg shadow-lg">
+              <div
+                class="bg-cover bg-center aspect-square transition-transform duration-500 ease-in-out group-hover:scale-110"
+                data-alt="Fresh and vibrant Tartar de Atún Rojo with avocado."
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCtHxtOrhM6q72VXtstP4hb6qgXFazVgOh5lU3t_gXKEr61pbkqn-q0lu7CeU5hshrjWIikhNfmjlpTNy1af8NVSoPLFFr6KFfqbA_MudTWptZo5lcrOGt8xlzDc7VepuRQ9xyJF9NtOv7evVgKbkC4tu4WTpEM3kmv8Q4l_DDbgWJirm8XTXWGf6_RbvihH9OKnYzH5SoBgaZAhFBc2SPSiAy-_YjyhA5oyvcZGfPuSS8kDaMH85onWk_IDSsSOvpcEJenmQXy2_c");'>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <p class="absolute bottom-4 left-4 text-white text-base font-bold leading-tight w-4/5 line-clamp-2">Tartar
+                de Atún Rojo</p>
+            </div>
+            <div class="group relative overflow-hidden rounded-lg shadow-lg">
+              <div
+                class="bg-cover bg-center aspect-square transition-transform duration-500 ease-in-out group-hover:scale-110"
+                data-alt="Decadent Mousse de Chocolate Belga with fresh berries."
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCDd28PJrXO3WHQdMHVh89Sdcw6FNSh_cvPasLiJhvTYjNI20YNr_2lWgmuMbFlPCcPH3z-1uJ8h3-3K-efe53tny7BOtQelpbznkAfRqMK7vSKvdzAHvYSdzhasdvT3WNfAc_4ETSER7YNFjTLMg0YTBTmQPc_txZKkJ_abMVu9M6iY2ruWBZMbDl9W2VrZEMuMl1BGgZgVmO8CdFCeRTTr55mdkJJblkzAFxpSPj-f5-581wzYGGyg4tTc9050KRqssnvuAXrTdo");'>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <p class="absolute bottom-4 left-4 text-white text-base font-bold leading-tight w-4/5 line-clamp-2">Mousse
+                de Chocolate Belga</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-16 sm:py-24 bg-background-light dark:bg-background-dark" id="reservas">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold leading-tight tracking-[-0.033em] md:text-4xl">Haga su Reserva</h2>
+            <p class="mt-4 text-base leading-relaxed text-subtle-light dark:text-subtle-dark">
+              Asegure su mesa para una noche inolvidable.
+            </p>
+          </div>
+
+<form id="reserva-form"
+            action="https://script.google.com/macros/s/AKfycbxf8PccYQXd8xaR8GCx60tj6XQVeN_obXCYRmsDIvgfPKNnicN5te4KoMQcXjaEHx4_Lw/exec"
+            method="POST" onsubmit="return enviarReserva(this)">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="date"
+                  class="block text-sm font-medium text-subtle-light dark:text-subtle-dark">Fecha</label>
+                <input type="date" id="date" name="fecha" required
+                  class="mt-1 block w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark/50 shadow-sm focus:border-primary focus:ring-primary">
+              </div>
+              <div>
+                <label for="time" class="block text-sm font-medium text-subtle-light dark:text-subtle-dark">Hora</label>
+                <input type="time" id="time" name="hora" required
+                  class="mt-1 block w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark/50 shadow-sm focus:border-primary focus:ring-primary">
+              </div>
+            </div>
+
+            <div>
+              <label for="guests" class="block text-sm font-medium text-subtle-light dark:text-subtle-dark">Número de
+                Comensales</label>
+              <input type="number" id="guests" name="personas" min="1" max="10" placeholder="2" required
+                class="mt-1 block w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark/50 shadow-sm focus:border-primary focus:ring-primary">
+            </div>
+
+            <div>
+              <label for="name" class="block text-sm font-medium text-subtle-light dark:text-subtle-dark">Nombre
+                Completo</label>
+              <input type="text" id="name" name="nombre" placeholder="Su nombre" required
+                class="mt-1 block w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark/50 shadow-sm focus:border-primary focus:ring-primary">
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium text-subtle-light dark:text-subtle-dark">Correo
+                Electrónico</label>
+              <input type="email" id="email" name="email" placeholder="su.email@ejemplo.com" required
+                class="mt-1 block w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark/50 shadow-sm focus:border-primary focus:ring-primary">
+            </div>
+
+            <div>
+              <label for="telefono"
+                class="block text-sm font-medium text-subtle-light dark:text-subtle-dark">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="+569 99999999" required
+                class="mt-1 block w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark/50 shadow-sm focus:border-primary focus:ring-primary">
+            </div>
+
+            <div>
+              <button type="submit"
+                class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-base font-bold text-text-light bg-primary hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-opacity">
+                Confirmar Reserva
+              </button>
+            </div>
+          </form>
+
+<!-- Modal de confirmación -->
+<div id="modal-confirm" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-sm text-center">
+    <h2 class="text-2xl font-bold mb-4 text-primary">¡Reserva Confirmada!</h2>
+    <p class="mb-6">Gracias por reservar. Revisa tu correo para la confirmación.</p>
+    <button onclick="cerrarModal()" class="bg-primary text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">Cerrar</button>
+  </div>
+</div>
+
+
+        </div>
+      </section>
+
+    </main>
+    <footer id="contacto" class="bg-background-dark text-background-light py-12">
+      <div class="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+        <div>
+          <h3 class="text-lg font-bold mb-2">Gourmet Restaurant</h3>
+          <p class="text-subtle-dark text-sm">Una experiencia culinaria que trasciende lo ordinario.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-2">Contacto</h3>
+          <ul class="space-y-1 text-subtle-dark text-sm">
+            <li><a href="tel:+56935621667" class="hover:text-primary">Tel: +56 9 3562 1667</a></li>
+            <li><a href="mailto:info@gourmet.com" class="hover:text-primary">info@gourmet.com</a></li>
+            <li>Calle Ficticia 123, Santiago, Chile</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-2">Síguenos</h3>
+          <div class="flex justify-center md:justify-start gap-4 mt-2">
+            <a href="https://www.facebook.com/" target="_blank" class="hover:text-primary transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+                <path
+                  d="M22.676 0H1.326C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.326 24h11.497v-9.294H9.691v-3.622h3.132V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.919.001c-1.506 0-1.797.717-1.797 1.767v2.319h3.591l-.468 3.622h-3.123V24h6.116C23.407 24 24 23.407 24 22.674V1.326C24 .593 23.407 0 22.676 0" />
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" class="hover:text-primary transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+
+          </div>
+        </div>
+      </div>
+      <div class="text-center text-sm text-subtle-dark mt-8 border-t border-border-dark pt-6">
+        © 2025 Gourmet Restaurant. Todos los derechos reservados.
+      </div>
+    </footer>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  // ----- Scroll suave -----
+  document.querySelectorAll('a[href^="#"]').forEach(enlace => {
+    enlace.addEventListener('click', e => {
+      e.preventDefault();
+      const destino = enlace.getAttribute('href') === '#'
+        ? document.body
+        : document.querySelector(enlace.getAttribute('href'));
+      if (destino) destino.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // ----- Elementos -----
+  const burgerBtn = document.getElementById('btn-menu');
+  const navMenu = document.getElementById('nav-menu');
+  const title = document.getElementById('header-title');
+  const links = document.querySelectorAll('#nav-menu a');
+
+  // ----- Abrir / cerrar menú -----
+  burgerBtn.addEventListener('click', () => {
+    const isHidden = navMenu.classList.contains('hidden');
+
+    if (isHidden) {
+      // Mostrar menú
+      navMenu.classList.remove('hidden');
+      setTimeout(() => navMenu.classList.remove('translate-x-full'), 10);
+      title.classList.add('opacity-0', '-translate-x-10', 'transition-all', 'duration-500');
+    } else {
+      // Ocultar menú
+      navMenu.classList.add('translate-x-full');
+      setTimeout(() => navMenu.classList.add('hidden'), 500);
+      title.classList.remove('opacity-0', '-translate-x-10');
+    }
+  });
+
+  // ----- Cerrar menú al hacer clic en un enlace -----
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.add('translate-x-full');
+      setTimeout(() => navMenu.classList.add('hidden'), 500);
+      title.classList.remove('opacity-0', '-translate-x-10');
+    });
+  });
+
+});
+function enviarReserva(form) {
+  const iframe = document.createElement("iframe");
+  iframe.style.display = "none";
+  iframe.name = "submit-frame";
+  document.body.appendChild(iframe);
+  form.target = "submit-frame";
+
+  setTimeout(() => {
+    document.getElementById("modal-confirm").classList.remove("hidden");
+    form.reset();
+    document.body.removeChild(iframe);
+  }, 1000);
+
+  return true;
+}
+
+function cerrarModal() {
+  document.getElementById("modal-confirm").classList.add("hidden");
+}
+
+</script>
+
+</body>
+
+</html>
